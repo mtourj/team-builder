@@ -34,8 +34,8 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Route exact path='/' render={() => <Members delete={deleteMember} members={members} />} />
-      <Route path='/add' add={addMember} component={AddMember} />
+      <Route exact path='/' render={props => <Members {...props} delete={deleteMember} members={members} />} />
+      <Route path='/add' render={props => <AddMember {...props} add={addMember} />} />
     </div>
   );
 }

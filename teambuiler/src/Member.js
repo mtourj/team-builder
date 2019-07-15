@@ -2,7 +2,7 @@ import React from 'react';
 
 const Member = props => {
   return (
-    <div>
+    <div className='member'>
       
     </div>
   );
