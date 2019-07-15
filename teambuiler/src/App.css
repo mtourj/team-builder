@@ -42,7 +42,7 @@
 
 .member {
   border: 1px solid black;
-  width: 220px;
+  width: 240px;
   margin: 16px;
   padding: 16px;
   display: flex;
@@ -53,4 +53,51 @@
   box-shadow: 1px 1px 5px 0 gray;
   user-select: none;
   cursor: default;
+}
+
+.add-member {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  margin: auto;
+  align-items: space-between;
+}
+
+.add-member .form-field {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 4px;
+  height: 27px;
+  align-items: center;
+}
+
+label {
+  padding: 8px;
+}
+
+input {
+  padding: 4px;
+  outline: none;
+  border-radius: 6px;
+  border: 1px solid lightslategray;
+}
+
+.add-member button {
+  border-radius: 6px;
+  border: none;
+  background-color: cadetblue;
+  padding: 8px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 8px;
+  width: 100%;
+
+  transition: background-color 0.2s;
+}
+
+.add-member button:hover {
+  background-color: rgb(115, 173, 175);
 }
