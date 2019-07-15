@@ -23,6 +23,14 @@ function App() {
     setMembers([...members, newMember]);
   }
 
+  // Expects a member object with a name, email and role - as well as the id of the existing member to replace
+  const updateMember = newMember => {
+    const newMembers = Array.from(members);
+    const targetIndex = newMembers.findIndex(member => member.id === newMember.id);
+    newMembers[targetIndex] = newMember;
+    setMembers(newMembers);
+  }
+
   // Removes member object from array in state, finds target by id
   const deleteMember = id => {
     const newMembers = Array.from(members);
@@ -34,7 +42,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Route exact path='/' render={props => <Members {...props} delete={deleteMember} members={members} />} />
+      <Route exact path='/' render={props => <Members {...props} delete={deleteMember} update={updateMember} members={members} />} />
       <Route path='/add' render={props => <AddMember {...props} add={addMember} />} />
     </div>
   );

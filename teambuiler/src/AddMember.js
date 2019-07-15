@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const AddMember = props => {
 
@@ -9,6 +9,12 @@ const AddMember = props => {
   });
 
   const [errorMessage, setErrorMessage] = useState('');
+
+  useEffect(() => {
+    if(props.default){
+      setFormData(props.default);
+    }
+  }, []);
 
   const addMember = e => {
     e.preventDefault();
@@ -30,7 +36,8 @@ const AddMember = props => {
       role: formData.role.trim()
     });
     setFormData({});
-    props.history.push('/');
+    if(!props.default)
+      props.history.push('/');
   }
 
   const updateForm = event => {

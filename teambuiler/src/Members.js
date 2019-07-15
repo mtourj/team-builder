@@ -8,7 +8,7 @@ const Members = props => {
   return (
     <div className='members'>
       {props.members.length === 0 ? <p>There are no members to show! <Link to='/add'>Click here to add one!</Link></p> : (
-        props.members.map(member => <Member key={member.id} delete={props.delete} info={member} />)
+        props.members.map(member => <Member key={member.id} delete={props.delete} update={props.update} info={member} />)
       )}
     </div>
   );
